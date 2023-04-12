@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'auto_salon.apps.AutoSalonConfig'
+    'auto_Salon.apps.AutoSalonConfig'
 ]
 
 MIDDLEWARE = [
