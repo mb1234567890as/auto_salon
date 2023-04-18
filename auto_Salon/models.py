@@ -91,3 +91,4 @@ class Create(models.Model):
         verbose_name = 'Создание манины'
         verbose_name_plural = 'Создание машиней'
         ordering = ['car']
+

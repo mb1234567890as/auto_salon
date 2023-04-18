@@ -44,7 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'auto_Salon.apps.AutoSalonConfig'
+    'auto_Salon.apps.AutoSalonConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+
+    'drf_yasg2',
+
+
 ]
 
 MIDDLEWARE = [
@@ -140,3 +146,23 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+
+}
+# DEFAULT_GENERATOR_CLASS = 'drf_yasg2.generators.OpenAPISchemaGenerator'
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_SCHEMA_CLASS': 'drf_yasg2.openapi.AutoSchema',
+#     'DEFAULT_GENERATOR_CLASS': 'drf_yasg2.generators.openapi.OpenApiSchemaGenerator',
+    
+# }

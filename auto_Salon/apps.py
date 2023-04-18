@@ -7,6 +7,6 @@ class AutoSalonConfig(AppConfig):
     verbose_name = 'Авто салон'
     verbose_name_plural = 'Авто салоны'
 
-    # def ready(self):
-    #     print('dbins app ready')
-    #     import auto_salon.signals
+    def ready(self):
+        print('dbins app ready')
+        import auto_Salon.signal
