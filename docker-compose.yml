@@ -21,6 +21,14 @@ services:
       - "8005:8005"
     depends_on:
       - db
+  # bot:
+  #   build: .
+  #   command: >
+  #     bash -c "main.py"
+  #   valumes:
+  #     - project:/usr/src/app
+  #   depends_on:
+  #     - db
 volumes:
   postgres_data:
   project:

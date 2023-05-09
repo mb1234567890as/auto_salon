@@ -1,9 +1,12 @@
+from typing import Any
+from django.db.models.query import QuerySet
 import django_filters.rest_framework
 from django.shortcuts import render
 
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.models import User
+from rest_framework.generics import ListAPIView
 
 
 from django.http import HttpResponse
@@ -172,7 +175,16 @@ class CreateViewSet(viewsets.ModelViewSet):
      def partial_update(self, request, *args, **kwargs):
          return super().partial_update(request, *args, **kwargs)
 
+class CreateListApiviews(ListAPIView):
+    serializer_class = CreateSerializer
+    filter_backends = [
+        filters.SearchFilter,
+        filters.OrderingFilter,
+        django_filters.rest_framework.DjangoFilterBackend,
+    ]
 
+    def get_queryset(self):
+        return Create.objects.all()
 
 # class CarView(generics.ListAPIView, generics.CreateAPIView):
 #     serializer_class = CarSerializer

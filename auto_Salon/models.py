@@ -7,8 +7,8 @@ class Car(models.Model):
         return str(self.name)
     
     class Meta:
-        verbose_name = 'Машина'
-        verbose_name_plural = 'Машины'
+        verbose_name = 'Бренд'
+        verbose_name_plural = 'Бренды'
         ordering = ['name']
 
 
@@ -85,12 +85,12 @@ class Create(models.Model):
     image = models.ImageField(upload_to='photos/', verbose_name='Фото', blank=True)
 
     # def __str__(self):
-    #     return f'{self.car} - {self.stamp} ({self.releasedate})'
+    #     return f'{self.car.name} {self.stamp.name} {self.releasedate.releasedate} {self.fuel.name} {self.typeofcar.name}'
     
     def __str__(self):
         return str(self.price)
 
     class Meta:
-        verbose_name = 'Создание манины'
-        verbose_name_plural = 'Создание машиней'
+        verbose_name = 'Манина'
+        verbose_name_plural = 'Машины'
         ordering = ['car']

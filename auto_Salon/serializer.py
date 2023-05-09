@@ -88,3 +88,14 @@ class CreateDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Create
         fields = ('id', 'car', 'stamp', 'country', 'releasedate', 'price', 'specifications', 'fuel', 'color', 'typeofcar', 'image', 'detail')
+
+class CreateSerializers(serializers.ModelSerializer):
+    car = serializers.CharField(source = 'car.name')
+    stamp = serializers.CharField(source = 'stamp.name')
+    country = serializers.CharField(source = 'country.name')
+    releasedate = serializers.CharField(source = 'releasedate.releasedate')
+    fuel = serializers.CharField(source = 'fuel.name')
+    typeofcar = serializers.CharField(source = 'typeofcar.name')
+    class Meta:
+        model = Create
+        fields = ('id', 'car', 'stamp', 'country', 'releasedate', 'price', 'specifications', 'fuel', 'color', 'typeofcar', 'image', )

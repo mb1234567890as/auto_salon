@@ -20,4 +20,5 @@ urlpatterns = [
     path('api-token-auth', AuthTokenView.as_view(), name='api_token_auth'),
     path('api-token-authout/', AuthTokenViewOut.as_view(), name='api_auth'),
     path('registration/', RegistrationView.as_view(), name='registration'),
+    path('createlist/', CreateListApiviews.as_view(), name='createlist'),
 ]
